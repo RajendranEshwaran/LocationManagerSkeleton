@@ -13,6 +13,8 @@
 		97B3040E23E08D1900E19EED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97B3040C23E08D1900E19EED /* Main.storyboard */; };
 		97B3041023E08D1B00E19EED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97B3040F23E08D1B00E19EED /* Assets.xcassets */; };
 		97B3041323E08D1B00E19EED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97B3041123E08D1B00E19EED /* LaunchScreen.storyboard */; };
+		97B3041B23E0A39D00E19EED /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97B3041A23E0A39D00E19EED /* LocationManager.swift */; };
+		97B3041D23E0D23B00E19EED /* LocationInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97B3041C23E0D23B00E19EED /* LocationInformation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		97B3040F23E08D1B00E19EED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		97B3041223E08D1B00E19EED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		97B3041423E08D1B00E19EED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		97B3041A23E0A39D00E19EED /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		97B3041C23E0D23B00E19EED /* LocationInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInformation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,8 @@
 				97B3040623E08D1900E19EED /* AppDelegate.swift */,
 				97B3040823E08D1900E19EED /* SceneDelegate.swift */,
 				97B3040A23E08D1900E19EED /* ViewController.swift */,
+				97B3041A23E0A39D00E19EED /* LocationManager.swift */,
+				97B3041C23E0D23B00E19EED /* LocationInformation.swift */,
 				97B3040C23E08D1900E19EED /* Main.storyboard */,
 				97B3040F23E08D1B00E19EED /* Assets.xcassets */,
 				97B3041123E08D1B00E19EED /* LaunchScreen.storyboard */,
@@ -138,6 +144,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97B3041B23E0A39D00E19EED /* LocationManager.swift in Sources */,
+				97B3041D23E0D23B00E19EED /* LocationInformation.swift in Sources */,
 				97B3040B23E08D1900E19EED /* ViewController.swift in Sources */,
 				97B3040723E08D1900E19EED /* AppDelegate.swift in Sources */,
 				97B3040923E08D1900E19EED /* SceneDelegate.swift in Sources */,
