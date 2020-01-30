@@ -15,16 +15,23 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
       
-        LocationManager.shared.start(locationInfoCallBack: {(info) in
+//        LocationManager.shared.start(locationInfoCallBack: {(info) in
+//            
+//            print("rajay :\(info.latitude ?? 0.0)")
+//            print("rajay \(info.longitude ?? 0.0)")
+//            print(info.address ?? " ")
+//            print(info.city ?? "")
+//            print(info.country ?? "")
+//            print(info.zip ?? 0)
+//            print(info.state ?? "")
+//        })
+        
+        RegionManager.shared.startRegion(regionInfoCallBack: {(info) in
             
-            print("rajay :\(info.latitude ?? 0.0)")
-            print("rajay \(info.longitude ?? 0.0)")
-            print(info.address ?? " ")
-            print(info.city ?? "")
-            print(info.country ?? "")
-            print(info.zip ?? 0)
-            print(info.state ?? "")
+            print("rajay: \(info.region.identifier)")
         })
+        
+        
     }
 
 

@@ -34,6 +34,7 @@ var locationInfoCallBack: ((_ info:LocationInformation)->())!
 
 /// Location
 var currentLocation = CLLocation()
+var region = CLRegion()
 
 static let shared: LocationManager = {
     let instance = LocationManager()
@@ -44,22 +45,12 @@ static let shared: LocationManager = {
         self.locationInfoCallBack = locationInfoCallBack
          locationManager.requestAlwaysAuthorization()
          locationManager.startUpdatingLocation()
-        
          locationManager.delegate = self
          locationManager.desiredAccuracy = kCLLocationAccuracyBest
          locationManager.distanceFilter = kCLDistanceFilterNone
          locationManager.requestLocation()
          locationManager.activityType = .other
-    //   locationManager.allowsBackgroundLocationUpdates = true
-    //   locationManager.pausesLocationUpdatesAutomatically = false
-    //   locationManager.showsBackgroundLocationIndicator = true
-    //   locationManager.requestWhenInUseAuthorization()
-
-         //    state = .updating
-         /*  if getPermission() == false {
-          displayAlertWithTitleMessageAndTwoButtons()
-          }
-          */
+   
     }
 
     func stop() {
@@ -77,12 +68,7 @@ static let shared: LocationManager = {
             return true
         case .denied, .restricted, .notDetermined:
             return false
-            /*    case .restricted:
-             return false
-             case .notDetermined:
-             locationManager.requestWhenInUseAuthorization()
-             return getPermission()
-             */
+            
         @unknown default:
             fatalError()
         }
@@ -99,35 +85,19 @@ static let shared: LocationManager = {
     {
         locationManager.stopUpdatingLocation()
     }
-   
-    /// Display Permission alert
-    func displayAlert() {
-
-        let alertController = UIAlertController(title: "Enable Location",
-                                                message: "The location permission was not authorized. Please enable it in Settings to continue.",
-                                                preferredStyle: .alert)
-
-        let settingsAction = UIAlertAction(title: "Settings", style: .default) { (alertAction) in
-
-        UIApplication.shared.open(NSURL(string:UIApplication.openSettingsURLString + Bundle.main.bundleIdentifier!)! as URL, options: [:], completionHandler: nil)
-        }
-        alertController.addAction(settingsAction)
-
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        alertController.addAction(cancelAction)
-//        AppInfo.shared.application.windows.first?.rootViewController!.presentedViewController?.present(alertController, animated: true, completion: nil)
-    }
 }
 
 extension LocationManager : CLLocationManagerDelegate
 {
+//MARK: Current location fetch operation
+    
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         print( "Did Location access permission was changed: \(status)")
 
         switch status {
         case .denied:
             print("get Location permission to access")
-            self.displayAlert()
+            //self.displayAlert()
         case .notDetermined,.restricted:
             print( "get Location permission to access")
             manager.requestWhenInUseAuthorization()
@@ -184,5 +154,6 @@ extension LocationManager : CLLocationManagerDelegate
          state = .updating
     }
     
+
     
 }
